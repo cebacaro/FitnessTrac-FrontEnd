@@ -19,6 +19,8 @@
   "homepage": "https://github.com/cebacaro/FitnessTrac-FrontEnd#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
+    "react-scripts": "^5.0.1"
   }
 }
