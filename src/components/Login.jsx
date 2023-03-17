@@ -27,8 +27,10 @@ function Login({
   };
 
   return (
-    <div id="login-form-div">
+    <div className="form-div">
+      <h2>Please Log In</h2>
       <form
+        className="form"
         onSubmit={(e) => {
           e.preventDefault();
           logInToSite();

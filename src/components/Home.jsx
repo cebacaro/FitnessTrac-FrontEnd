@@ -10,11 +10,10 @@ function Home({
   setCurrentUser,
 }) {
   return (
-    <div>
+    <div className="homeContainer">
       <h1>Welcome to Fitness Tracker</h1>
       {!loggedIn ? (
         <>
-          <h2>Please Log In</h2>
           <Login
             setLoggedIn={setLoggedIn}
             setToken={setToken}

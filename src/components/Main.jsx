@@ -20,33 +20,36 @@ const Main = () => {
   }, [token]);
 
   return (
-    <div>
-      <NavBar
-        loggedIn={loggedIn}
-        setCurrentUser={setCurrentUser}
-        setLoggedIn={setLoggedIn}
-        setToken={setToken}
-      />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              loggedIn={loggedIn}
-              setLoggedIn={setLoggedIn}
-              token={token}
-              setToken={setToken}
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-            />
-          }
+    <div className="main">
+      <div>
+        <NavBar
+          loggedIn={loggedIn}
+          setCurrentUser={setCurrentUser}
+          setLoggedIn={setLoggedIn}
+          setToken={setToken}
         />
-
-        <Route path="/register" element={<Register />} />
-        <Route path="/activities" element={<Activities />} />
-        <Route path="/myRoutines" element={<MyRoutines />} />
-        <Route path="/routines" element={<Routines />} />
-      </Routes>
+      </div>{" "}
+      <div className="routesContainer">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                loggedIn={loggedIn}
+                setLoggedIn={setLoggedIn}
+                token={token}
+                setToken={setToken}
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/myRoutines" element={<MyRoutines />} />
+          <Route path="/routines" element={<Routines />} />{" "}
+        </Routes>
+      </div>
     </div>
   );
 };

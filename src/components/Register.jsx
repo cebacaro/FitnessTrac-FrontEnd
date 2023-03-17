@@ -23,8 +23,9 @@ function Register({
   };
 
   return (
-    <div id="register-form-div">
+    <div className="form-div">
       <form
+        className="form"
         onSubmit={(e) => {
           e.preventDefault();
           registerToSite();
@@ -48,7 +49,7 @@ function Register({
           }}
           type="password"
         />
-        <button type="submit">Log In</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
