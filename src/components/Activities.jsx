@@ -9,22 +9,6 @@ function Activities({
   setCurrentUser,
   setLoggedIn,
 }) {
-  // const convertUserData = async () => {
-  //   const currentUserString = JSON.parse(localStorage.getItem("currentUser"));
-  //   console.log(typeof currentUserString, "!!!!!!");
-
-  //   return currentUserString;
-  // };
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     setToken(token);
-  //     setCurrentUser(convertUserData());
-  //     setLoggedIn(true);
-  //   }
-  // }, []);
-
   const [activities, setActivities] = useState([]);
 
   const getActivities = async () => {

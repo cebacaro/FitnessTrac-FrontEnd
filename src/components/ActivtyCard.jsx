@@ -7,14 +7,11 @@ const ActivityCard = ({ activity, loggedIn, token }) => {
   const [description, setDescription] = useState("");
 
   const displayEditForm = (id) => {
-    const formsList = document.getElementsByClassName("edit-activity-form");
-    const formsArr = [...formsList];
-    if (formsArr[id - 1].style.display === "flex") {
-      formsArr[id - 1].style.display = "none";
+    if (document.getElementById(`form${id}`).style.display === "flex") {
+      document.getElementById(`form${id}`).style.display = "none";
     } else {
-      formsArr[id - 1].style.display = "flex";
+      document.getElementById(`form${id}`).style.display = "flex";
     }
-    console.log(formsArr);
   };
 
   const editActivity = async () => {
@@ -33,7 +30,7 @@ const ActivityCard = ({ activity, loggedIn, token }) => {
       <div className="activity-card">
         <h2>{activity.name}</h2>
         <p>{activity.description}</p>
-        <p>{activity.id}</p>
+
         {loggedIn ? (
           <button
             onClick={() => {
@@ -51,6 +48,7 @@ const ActivityCard = ({ activity, loggedIn, token }) => {
             editActivity();
           }}
           className="edit-activity-form"
+          id={`form${activity.id}`}
         >
           <label>Name</label>
           <input
@@ -58,11 +56,11 @@ const ActivityCard = ({ activity, loggedIn, token }) => {
               setName(e.target.value);
             }}
             type="text"
-            value={activity.name}
+            defaultValue={activity.name}
           />
           <label>Description</label>
           <textarea
-            value={activity.description}
+            defaultValue={activity.description}
             onChange={(e) => {
               setDescription(e.target.value);
             }}
