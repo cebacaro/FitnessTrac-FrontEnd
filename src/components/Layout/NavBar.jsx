@@ -6,7 +6,9 @@ const NavBar = ({ loggedIn, setLoggedIn, setToken, setCurrentUser }) => {
 
   return (
     <div id="navbar">
-      <h1>Fitness Tracker</h1>
+      <Link to="/">
+        <h1>Fitness Tracker</h1>
+      </Link>
       <div id="links">
         <Link to="/activities">
           <h2>Activities</h2>

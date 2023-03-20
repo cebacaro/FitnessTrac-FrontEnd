@@ -17,7 +17,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", Geneva,
+    Verdana, sans-serif;
 }
 
 .main {
@@ -30,7 +31,6 @@ body {
   justify-content: center;
   align-items: center;
   align-self: center;
-
 }
 
 a {
@@ -44,7 +44,6 @@ a {
   background-color: #0a9396ff;
   align-items: center;
 }
-
 
 .form {
   flex-direction: column;
@@ -63,11 +62,27 @@ a {
   gap: 2rem;
   border: solid 1px black;
   align-self: center;
-
+  height: 95vh;
+  justify-content: center;
 }
 
 .form-div button {
   margin-top: 1rem;
+}
+
+.activity-card {
+  border: 2px solid black;
+  padding: 2vw 2vh;
+}
+
+.edit-activity-form-div {
+}
+
+.edit-activity-form {
+  display: none;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 1vh 1vw;
 }
 
 #navbar {

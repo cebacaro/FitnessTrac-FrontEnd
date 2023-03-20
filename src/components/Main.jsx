@@ -15,9 +15,29 @@ const Main = () => {
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState({});
 
+  // useEffect(() => {
+  //   localStorage.setItem("token", token);
+  // }, [token]);
+
+  // useEffect(() => {
+  //   localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  // }, [currentUser]);
+
+  const checkLoggedIn = async () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setToken(token);
+
+      setCurrentUser(await JSON.parse(localStorage.getItem("currentUser")));
+      setLoggedIn(true);
+    }
+  };
+
   useEffect(() => {
-    localStorage.setItem("token", token);
-  }, [token]);
+    checkLoggedIn();
+  }, []);
+
+  console.log(token, "token", currentUser, "currentUser");
 
   return (
     <div className="main">
@@ -45,7 +65,18 @@ const Main = () => {
             }
           />
           <Route path="/register" element={<Register />} />
-          <Route path="/activities" element={<Activities />} />
+          <Route
+            path="/activities"
+            element={
+              <Activities
+                setToken={setToken}
+                token={token}
+                setLoggedIn={setLoggedIn}
+                loggedIn={loggedIn}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
           <Route path="/myRoutines" element={<MyRoutines />} />
           <Route path="/routines" element={<Routines />} />{" "}
         </Routes>

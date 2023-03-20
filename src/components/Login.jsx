@@ -21,7 +21,8 @@ function Login({
       console.log(response);
       setToken(response.token);
       setCurrentUser(response.user);
-
+      localStorage.setItem("currentUser", JSON.stringify(response.user));
+      localStorage.setItem("token", JSON.stringify(response.token));
       setLoggedIn(true);
     }
   };
