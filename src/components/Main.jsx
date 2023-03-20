@@ -85,7 +85,7 @@ const Main = () => {
           ></Route>
           <Route
             path="/myRoutines"
-            element={<MyRoutines currentUser={currentUser} />}
+            element={<MyRoutines currentUser={currentUser} token={token} />}
           />
           <Route path="/routines" element={<Routines />} />{" "}
         </Routes>

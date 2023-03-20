@@ -6,7 +6,7 @@ function MyRoutines({ token, currentUser }) {
   const [myRoutines, setMyRoutines] = useState("");
 
   const getMyRoutines = async () => {
-    const response = await getMyRoutinesAPI(token, currentUser.usename);
+    const response = await getMyRoutinesAPI(token, currentUser.username);
     console.log(response);
     setMyRoutines(response);
   };
@@ -19,7 +19,7 @@ function MyRoutines({ token, currentUser }) {
       <h1>My Routines</h1>
       {myRoutines.length ? (
         <div>
-          {myRoutines.reverse.map((routine, idx) => {
+          {myRoutines.reverse().map((routine, idx) => {
             return (
               <RoutineCard key={`myRoutines maps: ${idx}`} routine={routine} />
             );

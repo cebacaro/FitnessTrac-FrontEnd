@@ -111,7 +111,7 @@ export const AddActivitiesAPI = async (token, name, description) => {
 
 export const getMyRoutinesAPI = async (token, username)=>{
   try {
-    const response = await fetch(`${BASE_URL}/${username}/routines`,{
+    const response = await fetch(`${BASE_URL}/users/${username}/routines`,{
       method: "GET",
       headers: makeHeaders(token),
     });
