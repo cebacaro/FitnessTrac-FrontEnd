@@ -60,6 +60,19 @@ export const getActivitiesAPI = async () => {
   }
 };
 
+export const getRoutinesAPI = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/routines`, {
+      method: "GET",
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const editActivitiesAPI = async (token, id, name, description) => {
   try {
     const response = await fetch(`${BASE_URL}/activities/${id}`, {
@@ -95,5 +108,18 @@ export const AddActivitiesAPI = async (token, name, description) => {
     console.error(error);
   }
 };
+
+export const getMyRoutinesAPI = async (token, username)=>{
+  try {
+    const response = await fetch(`${BASE_URL}/${username}/routines`,{
+      method: "GET",
+      headers: makeHeaders(token),
+    });
+    const result = await response.json();
+    return result
+  } catch (error) {
+    console.error(error)
+  }
+}
 
 
