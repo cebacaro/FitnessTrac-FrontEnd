@@ -6,4 +6,5 @@ export { default as Routines } from "./Routines";
 export { default as Login } from "./Login";
 export { default as Register } from "./Register";
 export { default as NavBar } from "./Layout/NavBar";
-export { default as ActivityCard } from "./ActivtyCard";
+export { default as ActivityCard } from "./ActivityCard";
+export { default as NewActivity } from "./NewActivity";

@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getActivitiesAPI } from "../api";
 import { ActivityCard } from "./";
+import { Link } from "react-router-dom";
 
-function Activities({
-  loggedIn,
-  token,
-  setToken,
-  setCurrentUser,
-  setLoggedIn,
-}) {
+function Activities({ loggedIn, token }) {
   const [activities, setActivities] = useState([]);
 
   const getActivities = async () => {
@@ -24,6 +19,13 @@ function Activities({
   return (
     <div>
       <h1>Activities</h1>
+
+      {loggedIn ? (
+        <Link to={"/newActivity"}>
+          <button type="submit">Add new activity</button>
+        </Link>
+      ) : null}
+
       {activities.length ? (
         <div>
           {activities.map((activity, idx) => {

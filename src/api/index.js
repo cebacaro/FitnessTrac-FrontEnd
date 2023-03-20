@@ -77,3 +77,23 @@ export const editActivitiesAPI = async (token, id, name, description) => {
     console.error(error);
   }
 };
+
+export const AddActivitiesAPI = async (token, name, description) => {
+  try {
+    const response = await fetch(`${BASE_URL}/activities`, {
+      method: "POST",
+      headers: makeHeaders(token),
+      body: JSON.stringify({
+        name: name,
+        description: description,
+      }),
+    });
+    console.log(response);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+

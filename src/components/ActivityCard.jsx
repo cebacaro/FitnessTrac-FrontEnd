@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Activities } from ".";
+
 import { editActivitiesAPI } from "../api";
 
 const ActivityCard = ({ activity, loggedIn, token }) => {

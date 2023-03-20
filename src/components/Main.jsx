@@ -8,6 +8,7 @@ import {
   Routines,
   Home,
   NavBar,
+  NewActivity,
 } from "./";
 
 const Main = () => {
@@ -77,6 +78,10 @@ const Main = () => {
               />
             }
           />
+          <Route
+            path="/newActivity"
+            element={<NewActivity token={token} />}
+          ></Route>
           <Route path="/myRoutines" element={<MyRoutines />} />
           <Route path="/routines" element={<Routines />} />{" "}
         </Routes>
