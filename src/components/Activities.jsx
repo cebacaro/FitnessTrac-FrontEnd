@@ -28,7 +28,7 @@ function Activities({ loggedIn, token }) {
 
       {activities.length ? (
         <div>
-          {activities.map((activity, idx) => {
+          {activities.reverse().map((activity, idx) => {
             return (
               <ActivityCard
                 token={token}

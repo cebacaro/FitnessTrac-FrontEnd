@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { AddActivitiesAPI } from "../api";
+import { useNavigate } from "react-router-dom";
 
 function NewActivity({ token }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
   const postNewActivity = async () => {
     const response = await AddActivitiesAPI(token, name, description);
     console.log(token, response, "!!!!!!!");
+    navigate("/activities");
   };
 
   return (
