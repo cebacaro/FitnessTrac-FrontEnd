@@ -198,4 +198,37 @@ export const addActivityToRoutineAPI = async (token,routineId, activityId, count
   }
 };
 
+export const deleteRoutineActivityAPI = async (token, routineActivityId) => {
+  try {
+    const response = await fetch(`${BASE_URL}/routine_activities/${routineActivityId}`, {
+      method: "DELETE",
+      headers: makeHeaders(token),
+      
+    });
+    console.log(response);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
+
+export const editRoutineActivityAPI = async (token, routineActivityId, duration, count) => {
+  try {
+    const response = await fetch(`${BASE_URL}/routine_activities/${routineActivityId}`, {
+      method: "PATCH",
+      headers: makeHeaders(token),
+      body: JSON.stringify( {
+        duration: duration,
+        count: count,
+      })
+      
+    });
+    console.log(response);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};

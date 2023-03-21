@@ -10,3 +10,4 @@ export { default as NavBar } from "./Layout/NavBar";
 export { default as ActivityCard } from "./ActivityCard";
 export { default as NewActivity } from "./NewActivity";
 export { default as NewRoutine } from "./NewRoutine";
+export { default as RoutineActivityCard } from "./RoutineActivityCard.jsx";

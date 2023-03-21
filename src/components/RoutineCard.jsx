@@ -5,6 +5,7 @@ import {
   addActivityToRoutineAPI,
 } from "../api";
 import { useLocation } from "react-router-dom";
+import RoutineActivityCard from "./RoutineActivityCard.jsx";
 
 function RoutineCard({ routine, currentUser, token, activities }) {
   const [name, setName] = useState("");
@@ -16,7 +17,6 @@ function RoutineCard({ routine, currentUser, token, activities }) {
   const [count, setCount] = useState("");
 
   console.log(locationHook.pathname);
-  console.log(activities, "activities from routine card");
 
   const displayEditForm = (id) => {
     if (document.getElementById(`form${id}`).style.display === "flex") {
@@ -40,7 +40,7 @@ function RoutineCard({ routine, currentUser, token, activities }) {
       isPublic
     );
     console.log(response);
-    //location.reload();
+    location.reload();
   };
 
   const addActivitytoRoutine = async () => {
@@ -64,13 +64,11 @@ function RoutineCard({ routine, currentUser, token, activities }) {
 
         {routine.activities.map((activity, idx) => {
           return (
-            <div key={`routineActivities: ${idx}`}>
-              <h4>{activity.name}</h4>
-              <ul>
-                <li>Duration: {activity.duration} </li>
-                <li>Count: {activity.count} </li>
-              </ul>
-            </div>
+            <RoutineActivityCard
+              key={`Routine activity map: ${idx}`}
+              activity={activity}
+              token={token}
+            />
           );
         })}
 
