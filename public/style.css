@@ -85,6 +85,24 @@ a {
   margin: 1vh 1vw;
 }
 
+.edit-routine-form {
+  display: none;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 1vh 1vw;
+}
+
+.add-activity-form {
+  display: none;
+  flex-direction: column;
+}
+
+.routine-card {
+  border: 2px solid black;
+  padding: 2vw 2vh;
+  margin-top: 2vh;
+}
+
 #navbar {
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getRoutinesAPI } from "../api";
 import { RoutineCard } from "./";
 
-function Routines({ token }) {
+function Routines({ token, currentUser, activities }) {
   const [routines, setRoutines] = useState("");
   const getRoutines = async () => {
     const response = await getRoutinesAPI();
@@ -21,7 +21,15 @@ function Routines({ token }) {
 
       {routines.length ? (
         routines.reverse().map((routine, idx) => {
-          return <RoutineCard key={`routine: ${idx}`} routine={routine} />;
+          return (
+            <RoutineCard
+              currentUser={currentUser}
+              key={`routine: ${idx}`}
+              routine={routine}
+              token={token}
+              activities={activities}
+            />
+          );
         })
       ) : (
         <h1>Loading....</h1>

@@ -10,25 +10,20 @@ import {
   NavBar,
   NewActivity,
   RoutineCard,
+  NewRoutine,
 } from "./";
+import { getActivitiesAPI } from "../api";
 
 const Main = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState({});
-
-  // useEffect(() => {
-  //   localStorage.setItem("token", token);
-  // }, [token]);
-
-  // useEffect(() => {
-  //   localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  // }, [currentUser]);
+  const [activities, setActivities] = useState([]);
 
   const checkLoggedIn = async () => {
     const token = localStorage.getItem("token");
     if (token) {
-      setToken(token);
+      setToken(await JSON.parse(token));
 
       setCurrentUser(await JSON.parse(localStorage.getItem("currentUser")));
       setLoggedIn(true);
@@ -37,6 +32,16 @@ const Main = () => {
 
   useEffect(() => {
     checkLoggedIn();
+  }, []);
+
+  const getActivities = async () => {
+    const response = await getActivitiesAPI();
+    console.log(response);
+    setActivities(response);
+  };
+
+  useEffect(() => {
+    getActivities();
   }, []);
 
   console.log(token, "token", currentUser, "currentUser");
@@ -76,6 +81,7 @@ const Main = () => {
                 setLoggedIn={setLoggedIn}
                 loggedIn={loggedIn}
                 setCurrentUser={setCurrentUser}
+                activities={activities}
               />
             }
           />
@@ -85,9 +91,21 @@ const Main = () => {
           ></Route>
           <Route
             path="/myRoutines"
-            element={<MyRoutines currentUser={currentUser} token={token} />}
+            element={
+              <MyRoutines
+                activities={activities}
+                currentUser={currentUser}
+                token={token}
+              />
+            }
           />
-          <Route path="/routines" element={<Routines />} />{" "}
+          <Route
+            path="/routines"
+            element={
+              <Routines activities={activities} currentUser={currentUser} />
+            }
+          />
+          <Route path="/newRoutine" element={<NewRoutine token={token} />} />
         </Routes>
       </div>
     </div>
