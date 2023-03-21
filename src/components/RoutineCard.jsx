@@ -8,8 +8,8 @@ import { useLocation } from "react-router-dom";
 import RoutineActivityCard from "./RoutineActivityCard.jsx";
 
 function RoutineCard({ routine, currentUser, token, activities }) {
-  const [name, setName] = useState("");
-  const [goal, setGoal] = useState("");
+  const [name, setName] = useState(routine.name);
+  const [goal, setGoal] = useState(routine.goal);
   const [isPublic, setIsPublic] = useState(routine.isPublic);
   const [activityToAdd, setActivityToAdd] = useState("");
   const locationHook = useLocation();

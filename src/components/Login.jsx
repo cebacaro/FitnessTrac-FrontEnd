@@ -55,7 +55,9 @@ function Login({
           }}
           type="password"
         />
-        <button type="submit">Log In</button>
+        <button className="submitButton" type="submit">
+          Log In
+        </button>
       </form>
       <h2>Or Register for an Account Below</h2>
       <Register

@@ -32,9 +32,9 @@ const RoutineActivityCard = ({ activity, token }) => {
   }, [count, duration]);
 
   return (
-    <div>
-      <h4>{activity.name}</h4>
-      <ul>
+    <div className="activityCard">
+      <h4> {activity.name} </h4>
+      <ul className="activityList">
         <li>
           Duration:{" "}
           {locationHook.pathname === "/myRoutines" ? (

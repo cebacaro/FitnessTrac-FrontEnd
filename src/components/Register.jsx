@@ -49,7 +49,9 @@ function Register({
           }}
           type="password"
         />
-        <button type="submit">Register</button>
+        <button className="submitButton" type="submit">
+          Register
+        </button>
       </form>
     </div>
   );

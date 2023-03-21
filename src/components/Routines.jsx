@@ -18,22 +18,23 @@ function Routines({ token, currentUser, activities }) {
   return (
     <div>
       <h1>Routines</h1>
-
-      {routines.length ? (
-        routines.reverse().map((routine, idx) => {
-          return (
-            <RoutineCard
-              currentUser={currentUser}
-              key={`routine: ${idx}`}
-              routine={routine}
-              token={token}
-              activities={activities}
-            />
-          );
-        })
-      ) : (
-        <h1>Loading....</h1>
-      )}
+      <div className="routinesContainer">
+        {routines.length ? (
+          routines.reverse().map((routine, idx) => {
+            return (
+              <RoutineCard
+                currentUser={currentUser}
+                key={`routine: ${idx}`}
+                routine={routine}
+                token={token}
+                activities={activities}
+              />
+            );
+          })
+        ) : (
+          <h1>Loading....</h1>
+        )}
+      </div>
     </div>
   );
 }
