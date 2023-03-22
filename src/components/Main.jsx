@@ -13,6 +13,7 @@ import {
   NewRoutine,
 } from "./";
 import { getActivitiesAPI } from "../api";
+import image from "../images/pexels-andrea-piacquadio-3764014.jpg";
 
 const Main = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -47,7 +48,15 @@ const Main = () => {
   console.log(token, "token", currentUser, "currentUser");
 
   return (
-    <div className="main">
+    <div
+      className="main"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundColor: "rgba(13, 13, 12, 0.035",
+        backgroundSize: "cover",
+        backgroundPositionY: "center",
+      }}
+    >
       <div>
         <NavBar
           loggedIn={loggedIn}
