@@ -24,7 +24,10 @@ function MyRoutines({ token, currentUser, activities }) {
       <Link to="/newRoutine">
         <button>Add New Routine</button>
       </Link>
-      {myRoutines.length ? (
+
+      {myRoutines.length === 0 ? (
+        <h1>No routines found</h1>
+      ) : myRoutines[0].name ? (
         <div>
           {myRoutines.reverse().map((routine, idx) => {
             return (

@@ -59,7 +59,7 @@ function RoutineCard({ routine, currentUser, token, activities }) {
 
   return (
     <>
-      <div className="routine-card">
+      <div className="routine-card card-width ">
         <h2>{routine.name}</h2>
         <p>{routine.goal}</p>
         <p>Created by {routine.creatorName}</p>

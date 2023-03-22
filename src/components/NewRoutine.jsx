@@ -19,7 +19,7 @@ const NewRoutine = ({ token }) => {
           e.preventDefault();
           postNewRoutine();
         }}
-        className="add-routine-form"
+        className="add-routine-form form"
       >
         <label>Name</label>
         <input

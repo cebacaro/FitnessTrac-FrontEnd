@@ -34,7 +34,7 @@ const RoutineActivityCard = ({ activity, token }) => {
   }, [count, duration]);
 
   return (
-    <div className="activityCard">
+    <div className="activityCard card-width">
       <h4> {activity.name} </h4>
       <ul className="activityList">
         <li>

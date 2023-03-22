@@ -33,6 +33,7 @@ const ActivityCard = ({ activity, loggedIn, token, routineId }) => {
 
         {loggedIn ? (
           <button
+            className="submitButton"
             onClick={() => {
               displayEditForm(activity.id);
             }}
@@ -47,7 +48,7 @@ const ActivityCard = ({ activity, loggedIn, token, routineId }) => {
             e.preventDefault();
             editActivity();
           }}
-          className="edit-activity-form"
+          className="edit-activity-form form"
           id={`form${activity.id}`}
         >
           <label>Name</label>
@@ -67,7 +68,9 @@ const ActivityCard = ({ activity, loggedIn, token, routineId }) => {
             rows="10"
             cols="30"
           />
-          <button type="submit">Submit</button>
+          <button className="submitButton" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </>
