@@ -158,7 +158,9 @@ function RoutineCard({ routine, currentUser, token, activities }) {
             }}
             type="number"
           />
-          <button type="submit">Submit</button>
+          <button className="submitButton" type="submit">
+            Submit
+          </button>
         </form>
       </div>
       <div className="edit-routine-form-holder">
@@ -208,7 +210,9 @@ function RoutineCard({ routine, currentUser, token, activities }) {
             value="false"
           />
 
-          <button type="submit">Submit</button>
+          <button className="submitButton" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </>

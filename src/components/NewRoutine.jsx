@@ -13,7 +13,8 @@ const NewRoutine = ({ token }) => {
     navigate("/myRoutines");
   };
   return (
-    <div>
+    <div class="title-holder">
+      <h1>Add new Routine</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -38,7 +39,9 @@ const NewRoutine = ({ token }) => {
           rows="10"
           cols="30"
         />
-        <button type="submit">Submit</button>
+        <button className="submitButton" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

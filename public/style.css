@@ -19,11 +19,26 @@
 body {
   background-color: rgba(0, 96, 115, 0.379);
   height: 100vh;
-  display: flex;
+
   flex-direction: column;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", Geneva,
     Verdana, sans-serif;
   position: relative;
+}
+
+h1 {
+  text-align: center;
+}
+
+.center-button {
+  margin: 1vh auto 1vh auto;
+}
+
+.title-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -32,10 +47,10 @@ body {
 }
 
 .routesContainer {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  align-self: center;
+  align-self: center; */
   margin-top: 10vh;
 }
 
@@ -67,7 +82,7 @@ a {
   justify-content: center;
   padding: 1rem;
   border-radius: 4px;
-  border: 1.5px solid #ee9b00ff;
+  border: 1.5px solid rgba(155, 34, 38, 0.466);
 }
 
 .form-div {
@@ -85,11 +100,11 @@ a {
 .submitButton {
   align-self: center;
   margin-top: 1rem;
-  width: 60px;
+  width: fit-content;
 }
 
 .activity-card {
-  border: 1.5px solid #ee9b00ff;
+  border: 1.5px solid rgba(155, 34, 38, 0.466);
   background-color: rgba(148, 210, 189, 0.554);
   padding: 2vw 2vh;
   display: flex;
@@ -101,17 +116,18 @@ a {
 .edit-activity-form {
   display: none;
   flex-direction: column;
-  border: 2px solid black;
+
   margin: 1vh 1vw;
-  animation: fadeInDown;
+  animation: fadeInLeft;
   animation-duration: 1s;
 }
 
 .edit-routine-form {
   display: none;
   flex-direction: column;
-  animation: fadeInDown;
+  animation: fadeInLeft;
   animation-duration: 1s;
+  margin-top: 2vh;
 }
 
 .activityCard {
@@ -143,25 +159,24 @@ a {
   display: none;
   flex-direction: column;
   overflow: hidden;
-  animation: fadeInDown;
+  animation: fadeInLeft;
   animation-duration: 1s;
   z-index: -1;
+  margin-top: 2vh;
 }
 
 .add-routine-form {
-  margin-top: 25vh;
+  margin-top: 15vh;
 }
 
 .add-activity-form {
   display: flex;
   flex-direction: column;
-  margin-top: 25vh;
+  margin-top: 15vh;
 }
 
-
-
 .routine-card {
-  border: 1.5px solid #ee9b00ff;
+  border: 1.5px solid rgba(155, 34, 38, 0.466);
   background-color: rgba(148, 210, 189, 0.554);
   padding: 2vw 2vh;
   display: flex;
@@ -172,7 +187,7 @@ a {
 }
 
 .card-width {
-  width: 29vw;
+  width: 40vw;
 }
 
 .routine-card h4 {
@@ -181,6 +196,17 @@ a {
   font-weight: bolder;
   font-size: 20px;
   margin: 01rem auto;
+  border-bottom: 2px solid #ee9b00ff;
+}
+
+.card-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.is-active {
   border-bottom: 2px solid #ee9b00ff;
 }
 

@@ -27,7 +27,7 @@ const ActivityCard = ({ activity, loggedIn, token, routineId }) => {
 
   return (
     <>
-      <div className="activity-card">
+      <div className="activity-card card-width">
         <h2>{activity.name}</h2>
         <p>{activity.description}</p>
 

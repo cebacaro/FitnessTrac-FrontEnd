@@ -4,7 +4,7 @@ import RoutineCard from "./RoutineCard";
 import { Link } from "react-router-dom";
 
 function MyRoutines({ token, currentUser, activities }) {
-  const [myRoutines, setMyRoutines] = useState("");
+  const [myRoutines, setMyRoutines] = useState(null);
 
   const getMyRoutines = async () => {
     const response = await getMyRoutinesAPI(token, currentUser.username);
@@ -20,15 +20,15 @@ function MyRoutines({ token, currentUser, activities }) {
 
   return (
     <div>
-      <h1>My Routines</h1>
-      <Link to="/newRoutine">
-        <button>Add New Routine</button>
-      </Link>
+      <div className="title-holder">
+        <h1>My Routines</h1>
+        <Link to="/newRoutine">
+          <button className="center-button">Add New Routine</button>
+        </Link>
+      </div>
 
-      {myRoutines.length === 0 ? (
-        <h1>No routines found</h1>
-      ) : myRoutines[0].name ? (
-        <div>
+      {myRoutines && myRoutines.length ? (
+        <div className="card-holder">
           {myRoutines.reverse().map((routine, idx) => {
             return (
               <RoutineCard
@@ -41,6 +41,8 @@ function MyRoutines({ token, currentUser, activities }) {
             );
           })}
         </div>
+      ) : myRoutines !== null ? (
+        <h1>No routines found</h1>
       ) : (
         <h1>Loading...</h1>
       )}

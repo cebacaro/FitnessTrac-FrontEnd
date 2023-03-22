@@ -18,7 +18,7 @@ function Routines({ token, currentUser, activities }) {
   return (
     <div>
       <h1>Routines</h1>
-      <div className="routinesContainer">
+      <div className="card-holder">
         {routines.length ? (
           routines.reverse().map((routine, idx) => {
             return (

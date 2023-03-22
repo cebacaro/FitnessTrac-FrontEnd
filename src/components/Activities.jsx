@@ -3,31 +3,22 @@ import { getActivitiesAPI } from "../api";
 import { ActivityCard } from "./";
 import { Link } from "react-router-dom";
 
-function Activities({ loggedIn, token }) {
-  const [activities, setActivities] = useState([]);
-
-  const getActivities = async () => {
-    const response = await getActivitiesAPI();
-    console.log(response);
-    setActivities(response);
-  };
-
-  useEffect(() => {
-    getActivities();
-  }, []);
-
+function Activities({ loggedIn, token, activities }) {
   return (
-    <div>
+    <div className="title-holder">
       <h1>Activities</h1>
 
       {loggedIn ? (
         <Link to={"/newActivity"}>
-          <button type="submit">Add new activity</button>
+          <button className="center-button" type="submit">
+            Add new activity
+          </button>
         </Link>
       ) : null}
 
+      <div></div>
       {activities.length ? (
-        <div>
+        <div className="card-holder">
           {activities.reverse().map((activity, idx) => {
             return (
               <ActivityCard

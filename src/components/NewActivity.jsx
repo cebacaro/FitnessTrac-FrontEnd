@@ -14,7 +14,8 @@ function NewActivity({ token }) {
   };
 
   return (
-    <div>
+    <div className="title-holder">
+      <h1>Add New Activity</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
