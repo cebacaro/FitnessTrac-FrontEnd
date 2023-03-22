@@ -24,6 +24,8 @@ function RoutineCard({ routine, currentUser, token, activities }) {
     } else {
       document.getElementById(`form${id}`).style.display = "flex";
     }
+    document.getElementById(`addActivityForm${routine.id}`).style.display =
+      "none";
   };
 
   const deleteRoutine = async () => {
@@ -103,6 +105,8 @@ function RoutineCard({ routine, currentUser, token, activities }) {
                       `addActivityForm${routine.id}`
                     ).style.display = "flex";
                   }
+                  document.getElementById(`form${routine.id}`).style.display =
+                    "none";
                 }}
               >
                 Add Activity
@@ -117,7 +121,7 @@ function RoutineCard({ routine, currentUser, token, activities }) {
             e.preventDefault();
             addActivitytoRoutine();
           }}
-          className="add-activity-form"
+          className="add-activity-to-routine-form form"
           id={`addActivityForm${routine.id}`}
         >
           <label>Activity to Add</label>
@@ -163,7 +167,7 @@ function RoutineCard({ routine, currentUser, token, activities }) {
             e.preventDefault();
             editRoutine();
           }}
-          className="edit-routine-form"
+          className="edit-routine-form form"
           id={`form${routine.id}`}
         >
           <label>Name</label>

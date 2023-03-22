@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { deleteRoutineActivityAPI, editRoutineActivityAPI } from "../api";
 import { useLocation } from "react-router-dom";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const RoutineActivityCard = ({ activity, token }) => {
   const [duration, setDuration] = useState(activity.duration);
@@ -38,50 +40,45 @@ const RoutineActivityCard = ({ activity, token }) => {
         <li>
           Duration:{" "}
           {locationHook.pathname === "/myRoutines" ? (
-            <button
+            <RemoveIcon
+              fontSize="x-small"
               onClick={() => {
                 if (duration > 0) {
                   setDuration(duration - 1);
                 }
               }}
-            >
-              -
-            </button>
+            />
           ) : null}{" "}
-          {duration}{" "}
+          <span className="number">{duration}</span>{" "}
           {locationHook.pathname === "/myRoutines" ? (
-            <button
+            <AddIcon
+              fontSize="x-small"
               onClick={() => {
                 setDuration(duration + 1);
               }}
-            >
-              {" "}
-              +{" "}
-            </button>
+            />
           ) : null}
         </li>
         <li>
           Count:{" "}
           {locationHook.pathname === "/myRoutines" ? (
-            <button
+            <RemoveIcon
+              fontSize="x-small"
               onClick={() => {
                 if (count > 0) {
                   setCount(count - 1);
                 }
               }}
-            >
-              -
-            </button>
-          ) : null}
-          {count}{" "}
+            />
+          ) : null}{" "}
+          <span className="number">{count}</span>{" "}
           {locationHook.pathname === "/myRoutines" ? (
-            <button
+            <AddIcon
+              fontSize="x-small"
               onClick={() => {
                 setCount(count + 1);
               }}
-            >
-              +
-            </button>
+            />
           ) : null}
         </li>
         {locationHook.pathname === "/myRoutines" ? (

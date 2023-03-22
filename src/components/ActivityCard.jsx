@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { editActivitiesAPI } from "../api";
 
-const ActivityCard = ({ activity, loggedIn, token }) => {
+const ActivityCard = ({ activity, loggedIn, token, routineId }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 

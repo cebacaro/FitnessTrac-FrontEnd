@@ -20,7 +20,7 @@ function NewActivity({ token }) {
           e.preventDefault();
           postNewActivity();
         }}
-        className="add-activity-form"
+        className="add-activity-form form"
       >
         <label>Name</label>
         <input
@@ -39,7 +39,9 @@ function NewActivity({ token }) {
           rows="10"
           cols="30"
         />
-        <button type="submit">Submit</button>
+        <button className="submitButton" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
