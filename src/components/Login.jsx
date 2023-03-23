@@ -18,7 +18,6 @@ function Login({
     if (response.error) {
       alert("Invalid Credientials");
     } else {
-      console.log(response);
       setToken(response.token);
       setCurrentUser(response.user);
       localStorage.setItem("currentUser", JSON.stringify(response.user));

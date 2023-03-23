@@ -9,14 +9,12 @@ const RoutineActivityCard = ({ activity, token }) => {
   const [count, setCount] = useState(activity.count);
   const locationHook = useLocation();
 
-  console.log(activity);
-
   const deleteRoutineActivity = async () => {
     const response = await deleteRoutineActivityAPI(
       token,
       activity.routineActivityId
     );
-    console.log(response);
+
     location.reload();
   };
 

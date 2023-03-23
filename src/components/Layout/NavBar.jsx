@@ -10,8 +10,6 @@ const NavBar = ({ loggedIn, setLoggedIn, setToken, setCurrentUser }) => {
   const myRoutinesNav = document.getElementById("myProfileNav");
   const locationHook = useLocation();
 
-  console.log(activitiesNav, routinesNav, loginNav, myRoutinesNav);
-
   const updateIsActive = () => {
     if (activitiesNav !== null) {
       activitiesNav.classList.remove("is-active");

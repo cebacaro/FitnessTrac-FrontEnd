@@ -2,10 +2,20 @@ import React, { useEffect, useState } from "react";
 import { getActivitiesAPI } from "../api";
 import { ActivityCard } from "./";
 import { Link } from "react-router-dom";
+import image from "../images/pexels-andrea-piacquadio-3764014.jpg";
 
 function Activities({ loggedIn, token, activities }) {
   return (
-    <div className="title-holder">
+    <div
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundColor: "rgba(13, 13, 12, 0.035",
+        backgroundSize: "cover",
+        backgroundPositionY: "center",
+        backgroundAttachment: "fixed",
+      }}
+      className="title-holder"
+    >
       <h1>Activities</h1>
 
       {loggedIn ? (

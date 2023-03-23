@@ -37,15 +37,13 @@ const Main = () => {
 
   const getActivities = async () => {
     const response = await getActivitiesAPI();
-    console.log(response);
+
     setActivities(response);
   };
 
   useEffect(() => {
     getActivities();
   }, []);
-
-  console.log(token, "token", currentUser, "currentUser");
 
   return (
     <div
@@ -55,6 +53,7 @@ const Main = () => {
         backgroundColor: "rgba(13, 13, 12, 0.035",
         backgroundSize: "cover",
         backgroundPositionY: "center",
+        backgroundAttachment: "fixed",
       }}
     >
       <div>
@@ -96,7 +95,13 @@ const Main = () => {
           />
           <Route
             path="/newActivity"
-            element={<NewActivity token={token} />}
+            element={
+              <NewActivity
+                activities={activities}
+                setActivities={setActivities}
+                token={token}
+              />
+            }
           ></Route>
           <Route
             path="/myRoutines"

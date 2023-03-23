@@ -2,24 +2,31 @@ import React, { useState, useEffect } from "react";
 import { getMyRoutinesAPI, getActivitiesAPI } from "../api";
 import RoutineCard from "./RoutineCard";
 import { Link } from "react-router-dom";
+import image from "../images/pexels-andrea-piacquadio-3764014.jpg";
 
 function MyRoutines({ token, currentUser, activities }) {
   const [myRoutines, setMyRoutines] = useState(null);
 
   const getMyRoutines = async () => {
     const response = await getMyRoutinesAPI(token, currentUser.username);
-    console.log(response);
+
     setMyRoutines(response);
   };
   useEffect(() => {
     if (token) {
       getMyRoutines();
     }
-    console.log(token, "!!!!");
   }, [token]);
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundColor: "rgba(13, 13, 12, 0.035",
+        backgroundSize: "cover",
+        backgroundPositionY: "center",
+      }}
+    >
       <div className="title-holder">
         <h1>My Routines</h1>
         <Link to="/newRoutine">

@@ -9,7 +9,7 @@ const NewRoutine = ({ token }) => {
 
   const postNewRoutine = async () => {
     const response = await AddRoutinesAPI(token, name, goal);
-    console.log(token, response, "!!!!!!!");
+
     navigate("/myRoutines");
   };
   return (

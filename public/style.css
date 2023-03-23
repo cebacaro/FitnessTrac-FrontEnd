@@ -18,8 +18,7 @@
 
 body {
   background-color: rgba(0, 96, 115, 0.651);
-  height: 100vh;
-
+  margin-top: 0;
   flex-direction: column;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", Geneva,
     Verdana, sans-serif;
@@ -31,8 +30,17 @@ h1 {
   text-align: center;
 }
 
-/* CARDS */
+li {
+  font-size: larger;
+  font-weight: bold;
+}
 
+p {
+  font-size: medium;
+  font-weight: bold;
+}
+
+/* CARDS */
 
 .activity-card {
   border: 1.5px solid rgba(155, 34, 38, 0.466);
@@ -59,12 +67,10 @@ h1 {
 
 .routine-card p {
   font-weight: bold;
-
 }
 
 .routine-card button {
   margin: 4px;
-
 }
 
 .card-width {
@@ -107,12 +113,6 @@ h1 {
   margin-bottom: 1rem;
   font-weight: bolder;
 }
-
-
-
-
-
-
 
 /* FORMS */
 .form {
@@ -175,15 +175,11 @@ h1 {
   margin-top: 15vh;
 }
 
-
-
 /* BUTTONS */
-
 
 .number {
   font-size: x-large;
 }
-
 
 .center-button {
   margin: 1vh auto 1vh auto;
@@ -222,19 +218,13 @@ a {
   height: 95vh;
   text-align: center;
   /* justify-content: center; */
-
 }
 
 .homeContainer h1 {
   position: relative;
   padding-top: 2rem;
   padding-bottom: 11vh;
-
 }
-
-
-
-
 
 .title-holder {
   display: flex;
@@ -242,8 +232,6 @@ a {
   justify-content: center;
   align-items: center;
 }
-
-
 
 /* LINKS */
 .is-active {
@@ -260,6 +248,9 @@ a {
   position: fixed;
   top: 0;
   padding: 1vh 1vw;
+  margin-bottom: 0;
+  z-index: 9999;
+  height: 8vh;
 }
 
 #links {
@@ -273,4 +264,52 @@ a:last-of-type {
   margin-right: 0.7rem;
   padding: 0 0.5vw 0 0.5vw;
   color: #0a9396ff;
+}
+
+#welcome-h1 {
+  animation: backInLeft;
+  animation-duration: 2s;
+  padding-top: 10rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+#logged-in-h1 {
+  margin-top: 0.5rem;
+  animation: backInRight;
+  animation-duration: 2s;
+
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+  #navbar {
+    flex-direction: column;
+    height: 10vh;
+  }
+
+  #links {
+    font-size: x-small;
+  }
+
+  .title-holder {
+    padding-top: 5vh;
+  }
+
+  .card-width {
+    width: 80vw;
+  }
+
+  .activityList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .activityList button {
+    margin-right: 5.5vw;
+  }
+
+  .form {
+    width: 80vw;
+  }
 }

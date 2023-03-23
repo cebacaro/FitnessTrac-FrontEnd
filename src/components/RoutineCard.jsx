@@ -16,8 +16,6 @@ function RoutineCard({ routine, currentUser, token, activities }) {
   const [duration, setDuration] = useState("");
   const [count, setCount] = useState("");
 
-  console.log(locationHook.pathname);
-
   const displayEditForm = (id) => {
     if (document.getElementById(`form${id}`).style.display === "flex") {
       document.getElementById(`form${id}`).style.display = "none";
@@ -41,7 +39,7 @@ function RoutineCard({ routine, currentUser, token, activities }) {
       goal,
       isPublic
     );
-    console.log(response);
+
     location.reload();
   };
 
@@ -53,7 +51,7 @@ function RoutineCard({ routine, currentUser, token, activities }) {
       count,
       duration
     );
-    console.log(response);
+
     location.reload();
   };
 
@@ -128,7 +126,6 @@ function RoutineCard({ routine, currentUser, token, activities }) {
           <select
             onChange={(e) => {
               setActivityToAdd(e.target.value);
-              console.log(activityToAdd);
             }}
             name="activities"
             id="activity-selector"
