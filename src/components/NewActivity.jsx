@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { AddActivitiesAPI } from "../api";
 import { useNavigate } from "react-router-dom";
 
-import image from "../images/pexels-andrea-piacquadio-3764014.jpg";
-
 function NewActivity({ token, activities, setActivities }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -20,16 +18,7 @@ function NewActivity({ token, activities, setActivities }) {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundColor: "rgba(13, 13, 12, 0.035",
-        backgroundSize: "cover",
-        backgroundPositionY: "center",
-        backgroundAttachment: "fixed",
-      }}
-      className="title-holder"
-    >
+    <div  className="title-holder">
       <h1>Add New Activity</h1>
       <form
         onSubmit={(e) => {
